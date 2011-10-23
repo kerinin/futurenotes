@@ -1,0 +1,13 @@
+#add_note
+  =link_to 'Add Note', new_note_path
+
+#search_bar
+  =form_tag '/search', :method => 'get' do
+    =label_tag :q, 'Search for:'
+    =text_field_tag :q
+    =submit_tag 'Search'
+    
+
+#common_tags
+  =@tags.all.each do |tag|
+    =link_to tag.name, tag_path(tag)

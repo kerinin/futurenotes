@@ -56,4 +56,18 @@ Spork.each_run do
   #     DatabaseCleaner.strategy = :transaction
   #   end
   #
+  
+  Before do
+    tags = Tag.create([
+      { :name => 'Tag 1'},
+      { :name => 'Tag 2'},
+      { :name => 'Tag 3'}
+    ])
+
+    notes = Note.create([
+      {:title => 'Note 1', :description => 'Description 1', :tags => [tags[0], tags[1]] },
+      {:title => 'Note 2', :description => 'Description 2', :tags => [tags[1], tags[2]] },
+      {:title => 'Note 3', :description => 'Description 3'}
+    ])
+  end
 end
