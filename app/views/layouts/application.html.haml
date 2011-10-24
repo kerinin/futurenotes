@@ -12,8 +12,12 @@
         #learn
           =link_to 'About', '/about'
           
-        #login
-          =link_to 'Login', new_user_session_path
+        -if current_user.nil?
+          #login
+            =link_to 'Login', new_user_session_path
+        -else
+          #logout
+            =link_to 'Logout', destroy_user_session_path, :method => :delete
         
       %p.notice= notice
       %p.alert= alert

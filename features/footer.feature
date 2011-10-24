@@ -14,7 +14,7 @@ Feature: Footer bar
     When I click 'About' from within '#footer'
     Then I should be redirected to '/about'
     
-  @current
+  @active
   Scenario: Click TOS
     Given I am on '/'
     When I click 'Terms of Service'

@@ -31,10 +31,24 @@ When "I type '$text' into '$field'" do |text, field|
   fill_in field, :with => text
 end
 
-When 'I submit the form' do
-  pending # express the regexp above with the code you wish you had
+When "I login as valid user '$username'" do |username|
+  @current_user = User.create!(
+      :login => username,
+      :password => 'password123',
+      :password_confirmation => 'password123',
+      :email => "#{username}@example.com"
+  )
+  fill_in 'Email', :with => "#{username}@example.com"
+  fill_in 'Password', :with => 'password123'
+  click_button('Sign in')
 end
 
-When 'I fill in my credentials' do
-  pending
+When "I login as invalid user '$username'" do |username|
+  fill_in 'Email', :with => "#{username}@example.com"
+  fill_in 'Password', :with => 'password123'
+  click_button('Sign in')
+end
+
+Given "I have entered a new note" do
+  pending # express the regexp above with the code you wish you had
 end
