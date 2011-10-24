@@ -7,6 +7,7 @@ gem 'rake', '~> 0.9.2'
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'pg'
 
 gem 'json'
 gem 'haml'

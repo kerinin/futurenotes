@@ -58,6 +58,7 @@ Futurenotes::Application.routes.draw do
   
   match '/search' => 'search#find'
   match '/about' => 'static#about'
+  match '/tos' => 'static#tos'
 
   # See how all your routes lay out with "rake routes"
 

@@ -13,6 +13,12 @@ Given 'I have authenticated from /$path' do |path|
   click_button('Go')
 end
 
+When "I click '$path' from within '$scope'" do |path, scope|
+  within(scope) do
+    click_link path
+  end
+end
+
 When "I click '$path'" do |path|
   click_link path
 end
