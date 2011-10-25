@@ -25,6 +25,7 @@ class NotesController < ApplicationController
   # GET /notes/new.json
   def new
     @note = Note.new
+    @tags = Tag.limit(20)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,6 +42,7 @@ class NotesController < ApplicationController
   # POST /notes.json
   def create
     @note = Note.new(params[:note])
+    @tags = Tag.limit(20)
 
     respond_to do |format|
       if @note.save

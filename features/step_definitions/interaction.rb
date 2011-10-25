@@ -1,16 +1,17 @@
-Given 'I have authenticated from /$path' do |path|
+Given "I have authenticated from '$path'" do |path|
   @current_user = User.create!(
       :login => 'username',
-      :password => 'password',
-      :password_confirmation => 'password',
+      :password => 'password123',
+      :password_confirmation => 'password123',
       :email => "username@example.com"
   )
   
   visit path
+  click_link 'Login'
   
-  fill_in 'Login', :with => 'username@example.com'
-  fill_in 'Password', :with => 'password'
-  click_button('Go')
+  fill_in 'Email', :with => 'username@example.com'
+  fill_in 'Password', :with => 'password123'
+  click_button('Sign in')
 end
 
 When "I click '$path' from within '$scope'" do |path, scope|
