@@ -1,0 +1,8 @@
+%h1= @note.title
+
+#description= @note.description
+
+#tags
+  -@note.tags.each do |tag|
+    .tag= link_to tag.name, tag_path(tag)
+

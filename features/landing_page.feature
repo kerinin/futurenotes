@@ -31,7 +31,7 @@ Feature: Landing Page
   Scenario: Click tag from list
     Given I am on '/'
     When I click 'Tag 1'
-    Then I should be redirected to '/tags/tag-1'
+    Then I should be redirected to '/tags/1'
   
   @active
   Scenario: Click about

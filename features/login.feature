@@ -4,7 +4,7 @@ Feature: User login
     Given I am on '/'
     When I click 'Login'
     And I login as valid user 'Alice'
-    Then I should be redirected to '/users/1'
+    Then I should be redirected to '/users/2'
     And I should see '#logout'
     
   @active
@@ -20,7 +20,7 @@ Feature: User login
     Given I am on '/tags/tag-1'
     When I click 'Login'
     And I login as valid user 'Alice'
-    Then I should be redirected to '/tags/tag-1'
+    Then I should be redirected to '/tags/1'
     And I should see the text 'Alice'
     And I should see '#logout'
     
@@ -59,3 +59,7 @@ Feature: User login
     Then I should see the text 'Login Unsuccessful'
     And I should see the text 'Sign in to save your note'
     
+  @active
+  Scenario: Step check
+    Given I have authenticated from '/'
+    Then I should be redirected to '/users/1'

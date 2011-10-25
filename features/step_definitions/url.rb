@@ -2,7 +2,7 @@ Given "I am on '$route'" do |route|
   visit route
 end
 
-When "I load '/$page'" do |page|
+When "I load '$page'" do |page|
   visit page
 end
 

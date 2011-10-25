@@ -5,6 +5,7 @@ class CreateNotes < ActiveRecord::Migration
       
       t.string :title
       t.string :description
+      t.boolean :private, :default => false
 
       t.timestamps
     end

@@ -58,16 +58,32 @@ Spork.each_run do
   #
   
   Before do
+    @current_user = User.create!(
+        :login => 'username',
+        :password => 'password123',
+        :password_confirmation => 'password123',
+        :email => "username@example.com"
+    )
+    
     tags = Tag.create([
       { :name => 'Tag 1'},
       { :name => 'Tag 2'},
-      { :name => 'Tag 3'}
+      { :name => 'Tag 3'},
+      { :name => 'tag 1'}
     ])
 
     notes = Note.create([
-      {:title => 'Note 1', :description => 'Description 1', :tags => [tags[0], tags[1]] },
-      {:title => 'Note 2', :description => 'Description 2', :tags => [tags[1], tags[2]] },
-      {:title => 'Note 3', :description => 'Description 3'}
+      {:title => 'Note 1', :description => 'Description 1', :tags => [tags[0], tags[1]], :user => @current_user },
+      {:title => 'Note 2', :description => 'Description 2', :tags => [tags[1], tags[2]], :user => @current_user },
+      {:title => 'Note 3', :description => 'Description 3', :user => @current_user },
+      {:title => 'Note 4', :description => 'Description 4', :tags => [tags[3],tags[2]], :user => @current_user }
+    ])
+    
+    private_notes = Note.create([
+      {:title => 'Private Note 1', :description => 'Private Description 1', :tags => [tags[0], tags[1]], :private => true, :user => @current_user },
+      {:title => 'Private Note 2', :description => 'Private Description 2', :tags => [tags[1], tags[2]], :private => true, :user => @current_user },
+      {:title => 'Private Note 3', :description => 'Private Description 3', :private => true, :user => @current_user},
+      {:title => 'Private Note 4', :description => 'Private Description 4', :tags => [tags[3],tags[2]], :private => true, :user => @current_user }  
     ])
   end
 end

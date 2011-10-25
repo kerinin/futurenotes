@@ -1,0 +1,9 @@
+%h1= @tag.name
+
+-@user_notes.each do |note|
+  .user_note
+    %h2= note.title
+    
+-@public_notes.each do |note|
+  .public_note
+    %h2= note.title

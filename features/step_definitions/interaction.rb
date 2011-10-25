@@ -1,11 +1,4 @@
 Given "I have authenticated from '$path'" do |path|
-  @current_user = User.create!(
-      :login => 'username',
-      :password => 'password123',
-      :password_confirmation => 'password123',
-      :email => "username@example.com"
-  )
-  
   visit path
   click_link 'Login'
   

@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(:version => 20111024021908) do
     t.integer  "user_id"
     t.string   "title"
     t.string   "description"
+    t.boolean  "private",     :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -30,10 +31,7 @@ ActiveRecord::Schema.define(:version => 20111024021908) do
   create_table "tags", :force => true do |t|
     t.string  "name"
     t.integer "count"
-    t.string  "slug"
   end
-
-  add_index "tags", ["slug"], :name => "index_tags_on_slug", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                                 :default => "", :null => false

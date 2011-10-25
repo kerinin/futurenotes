@@ -16,7 +16,7 @@ Feature: Create new notes
     And I type 'new note title' into 'Title'
     And I type 'new note description' into 'Description'
     When I press the button 'Create'
-    Then I should be redirected to '/notes/4'
+    Then I should be redirected to '/notes/9'
     And I should see the text 'Note was successfully created'
     
   @active
@@ -25,7 +25,7 @@ Feature: Create new notes
     And I am on '/notes/new'
     And I type 'new note title' into 'Title'
     When I press the button 'Create'
-    Then I should be redirected to '/notes/4'
+    Then I should be redirected to '/notes/9'
     And I should see the text 'Note was successfully created'
       
   @active  
@@ -57,7 +57,7 @@ Feature: Create new notes
     And I type 'new note description' into 'Description'
     And I type 'random tag' into 'New Tag'
     When I press the button 'Create'
-    Then I should be redirected to '/notes/4'
+    Then I should be redirected to '/notes/9'
     And I should see the text 'Note was successfully created'
     And note id=1 should have tag id=4
     
@@ -69,7 +69,7 @@ Feature: Create new notes
     And I type 'new note description' into 'Description'
     And I type 'Tag 1' into 'New Tag'
     When I press the button 'Create'
-    Then I should be redirected to '/notes/4'
+    Then I should be redirected to '/notes/9'
     And I should see the text 'Note was successfully created'
     And note id=1 should have tag id=1
     
@@ -81,6 +81,6 @@ Feature: Create new notes
     And I type 'new note description' into 'Description'
     And I type 'tag 1' into 'New Tag'
     When I press the button 'Create'
-    Then I should be redirected to '/notes/4'
+    Then I should be redirected to '/notes/9'
     And I should see the text 'Note was successfully created'
     And note id=1 should have tag id=4

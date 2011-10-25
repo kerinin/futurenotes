@@ -42,6 +42,7 @@ class NotesController < ApplicationController
   # POST /notes.json
   def create
     @note = Note.new(params[:note])
+    @note.user ||= current_user
     @tags = Tag.limit(20)
 
     respond_to do |format|

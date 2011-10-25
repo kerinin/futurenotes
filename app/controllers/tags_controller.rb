@@ -14,7 +14,13 @@ class TagsController < ApplicationController
   # GET /tags/1.json
   def show
     @tag = Tag.find(params[:id])
-
+    
+    # First find any notes whose tag matches the slug of @tag
+    notes_with_tag = Note.joins(:tags).where('UPPER( tags.name ) == ?', @tag.name.upcase)
+    
+    @user_notes = current_user.nil? ? [] : notes_with_tag.where( :user_id => current_user.id )
+    @public_notes = current_user.nil? ? notes_with_tag.where( :private => false ) : notes_with_tag.where( :private => false).where("user_id != ?", current_user.id)
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render :json => @tag }
