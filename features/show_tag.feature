@@ -56,10 +56,3 @@ Feature: Search by Tag
     Given I am on '/notes/1'
     When I click 'Tag 1'
     Then I should be redirected to '/tags/1'
-  
-  @pending
-  Scenario: Search for tag
-    Given I am on '/'
-    When I enter 'Tag 1' into '#search'
-    And I press the button 'Search'
-    Then I should be redirected to '/tags/1'
