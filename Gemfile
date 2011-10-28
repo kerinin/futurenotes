@@ -10,7 +10,7 @@ group :production do
   gem 'pg'
 end
 
-group :development, :test, :cucumber do
+group :development, :test do
   gem 'sqlite3'
 end
 
@@ -29,7 +29,7 @@ end
 gem 'jquery-rails'
 gem 'devise'
 
-group :test, :cucumber do
+group :test do
   gem 'capybara'
   gem 'cucumber-websteps'
   gem 'cucumber-rails'
