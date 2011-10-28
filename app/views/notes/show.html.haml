@@ -4,5 +4,5 @@
 
 #tags
   -@note.tags.each do |tag|
-    .tag= link_to tag.name, tag_path(tag)
+    .tag{:id => "tag_#{tag.id}"}= link_to tag.name, tag_path(tag)
 

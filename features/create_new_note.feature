@@ -37,19 +37,19 @@ Feature: Create new notes
     Then I should be redirected to the notes page
     And I should see the text "Title can't be blank"
     
-  @pending
+  @active
   Scenario: Basic input with existing tag
     Given I have authenticated from the home page
     And I am on the new note page
     And I type 'new note title' into 'Title'
     And I type 'new note description' into 'Description'
-    And I click 'Tag 1'
+    And I check "Tag 1"
     When I press the button 'Create'
-    Then I should be redirected to note page 4
+    Then I should be redirected to note page 9
     And I should see the text 'Note was successfully created'
-    And note id=1 should have tag id=1
+    And I should see the text 'Tag 1' under '#tags'
     
-  @pending
+  @active
   Scenario: Basic input with new tag
     Given I have authenticated from the home page
     And I am on the new note page
@@ -59,9 +59,9 @@ Feature: Create new notes
     When I press the button 'Create'
     Then I should be redirected to note page 9
     And I should see the text 'Note was successfully created'
-    And note id=1 should have tag id=4
+    And I should see the text 'random tag' under '#tags'
     
-  @pending
+  @active
   Scenario: Basic input with existing tag (via input field)
     Given I have authenticated from the home page
     And I am on the new note page
@@ -71,16 +71,18 @@ Feature: Create new notes
     When I press the button 'Create'
     Then I should be redirected to note page 9
     And I should see the text 'Note was successfully created'
-    And note id=1 should have tag id=1
+    And I should see the text 'Tag 1' under '#tags'
+    And I should see 1 elements kind of "#tag_1"
     
-  @pending
-  Scenario: Basic input with new tag (with same slug as existing)
+  @active
+  Scenario: Basic input with new tag (with different capitalization)
     Given I have authenticated from the home page
     And I am on the new note page
     And I type 'new note title' into 'Title'
     And I type 'new note description' into 'Description'
-    And I type 'tag 1' into 'New Tag'
+    And I type 'tAg 1' into 'New Tag'
     When I press the button 'Create'
     Then I should be redirected to note page 9
     And I should see the text 'Note was successfully created'
-    And note id=1 should have tag id=4
+    And I should see the text 'tAg 1' under '#tags'
+    And I should see 1 elements kind of "#tag_6"

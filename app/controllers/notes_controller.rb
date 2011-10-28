@@ -44,6 +44,11 @@ class NotesController < ApplicationController
     @note = Note.new(params[:note])
     @note.user ||= current_user
     @tags = Tag.limit(20)
+    
+    unless params[:new_tag].nil?
+      tag = Tag.find_or_create_by_name( params[:new_tag] )
+      @note.tags << tag
+    end
 
     respond_to do |format|
       if @note.save
