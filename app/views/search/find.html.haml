@@ -1,1 +1,12 @@
-%h1= "Search Results for '#{params[:q]}'"
+%h1= "Search results for '#{@query}'"
+
+#user_notes
+  -@user_notes.each do |note|
+    .note
+      =note.title
+      
+  
+#public_notes
+  -@public_notes.each do |note|
+    .note
+      =note.title

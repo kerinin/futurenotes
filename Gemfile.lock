@@ -29,6 +29,8 @@ GEM
       activesupport (= 3.1.1)
     activesupport (3.1.1)
       multi_json (~> 1.0)
+    acts_as_indexed (0.7.6)
+    addressable (2.2.6)
     arel (2.2.1)
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
@@ -58,6 +60,10 @@ GEM
       capybara (>= 1.1.1)
       cucumber (>= 1.1.0)
       nokogiri (>= 1.5.0)
+    cucumber-websteps (0.9.0)
+      capybara
+      cucumber
+      launchy
     database_cleaner (0.6.7)
     devise (1.4.9)
       bcrypt-ruby (~> 3.0)
@@ -78,6 +84,8 @@ GEM
       thor (~> 0.14)
     json (1.6.1)
     json_pure (1.6.1)
+    launchy (2.0.5)
+      addressable (~> 2.2.6)
     mail (2.3.0)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -153,9 +161,11 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  acts_as_indexed (~> 0.7.6)
   capybara
   coffee-rails (~> 3.1.1)
   cucumber-rails
+  cucumber-websteps
   database_cleaner
   devise
   haml

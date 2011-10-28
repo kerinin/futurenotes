@@ -1,5 +1,5 @@
-Given "I have authenticated from '$path'" do |path|
-  visit path
+Given "I have authenticated from $path" do |path|
+  visit path_to(path)
   click_link 'Login'
   
   fill_in 'Email', :with => 'username@example.com'
@@ -7,14 +7,14 @@ Given "I have authenticated from '$path'" do |path|
   click_button('Sign in')
 end
 
-When "I click '$path' from within '$scope'" do |path, scope|
-  within(scope) do
+When /^I click '([^\']+)'(?: from inside '([^\']+)')?$/ do |path, scope|
+  unless scope.nil?
+    within(scope) do
+      click_link path
+    end
+  else
     click_link path
   end
-end
-
-When "I click '$path'" do |path|
-  click_link path
 end
 
 When "I press the button '$selector'" do |selector|

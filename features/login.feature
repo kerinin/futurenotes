@@ -1,26 +1,26 @@
 Feature: User login
   @active
   Scenario: Successful login from /
-    Given I am on '/'
+    Given I am on the home page
     When I click 'Login'
     And I login as valid user 'Alice'
-    Then I should be redirected to '/users/2'
+    Then I should be redirected to user page 2
     And I should see '#logout'
     
   @active
   Scenario: Failed login from /
-    Given I am on '/'
+    Given I am on the home page
     When I click 'Login'
     And I login as invalid user 'Bob'
-    Then I should be redirected to '/users/sign_in'
+    Then I should be redirected to the sign-in page
     And I should see the text 'Invalid email or password'
     
   @pending
   Scenario: Login from tag
-    Given I am on '/tags/tag-1'
+    Given I am on tag page 1
     When I click 'Login'
     And I login as valid user 'Alice'
-    Then I should be redirected to '/tags/1'
+    Then I should be redirected to tag page 1
     And I should see the text 'Alice'
     And I should see '#logout'
     
@@ -61,5 +61,5 @@ Feature: User login
     
   @active
   Scenario: Step check
-    Given I have authenticated from '/'
-    Then I should be redirected to '/users/1'
+    Given I have authenticated from the home page
+    Then I should be redirected to user page 1

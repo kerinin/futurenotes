@@ -10,12 +10,13 @@ group :production do
   gem 'pg'
 end
 
-group :development, :test do
+group :development, :test, :cucumber do
   gem 'sqlite3'
 end
 
 gem 'json'
 gem 'haml'
+gem 'acts_as_indexed', '~> 0.7.6'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -28,8 +29,9 @@ end
 gem 'jquery-rails'
 gem 'devise'
 
-group :test do
+group :test, :cucumber do
   gem 'capybara'
+  gem 'cucumber-websteps'
   gem 'cucumber-rails'
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
