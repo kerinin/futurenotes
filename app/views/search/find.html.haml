@@ -2,11 +2,10 @@
 
 #user_notes
   -@user_notes.each do |note|
-    .note
-      =note.title
-      
-  
+    .user_note{:id => "note_#{note.id}"}
+      =render :partial => '/notes/results_block', :locals => {:note => note}
+    
 #public_notes
   -@public_notes.each do |note|
-    .note
-      =note.title
+    .public_note{:id => "note_#{note.id}"}
+      =render :partial => '/notes/results_block', :locals => {:note => note}

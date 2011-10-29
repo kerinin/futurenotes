@@ -1,5 +1,5 @@
 Feature: Search
-  @active
+  @current
   Scenario: Basic search
     Given I am on the home page
     When I type 'foobar' into 'Search'
@@ -7,7 +7,12 @@ Feature: Search
     Then I should be redirected to the search page
     # And show me the page
     And I should see the text "Search results for 'foobar'"
+    
     And I should see the text 'Note 1'
+    And I should see the text 'Description 1' under '#public_notes'
+    And I should see the text 'Tag 1' under '#note_1'
+    And I should see the text 'Tag 2' under '#note_1'
+    
     And I should not see the text 'Note 2'
     And I should see the text 'Note 3'
     And I should see the text 'Note 4'
@@ -49,7 +54,7 @@ Feature: Search
     And I should not see the text 'Private Note 3'
     And I should not see the text 'Private Note 4'
           
-  @active
+  @current
   Scenario: Basic authenticated search
     Given I have authenticated from the home page
     And I am on the home page
@@ -62,6 +67,9 @@ Feature: Search
     And I should see the text 'Note 3'
     And I should see the text 'Note 4'
     And I should see the text 'Private Note 1' under '#user_notes'
+    And I should see the text 'Private Description 1' under '#user_notes'
+    And I should see the text 'Tag 1' under '#user_notes'
+    And I should see the text 'Tag 2' under '#user_notes'
     And I should not see the text 'Private Note 2' under '#user_notes'
     And I should see the text 'Private Note 3' under '#user_notes'
     And I should see the text 'Private Note 4' under '#user_notes'
