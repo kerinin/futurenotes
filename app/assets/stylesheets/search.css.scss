@@ -1,3 +1,23 @@
 // Place all the styles related to the Search controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#search_bar {
+  text-align : center;
+  font-size : 50px;
+  line-height : 60px;
+  margin-top : 100px;
+  margin-bottom : 50px;
+  
+  input {
+    height : 50px;
+    font-size : 50px;
+    color : blue
+  }
+}
+
+#common_tags {
+  text-align : center;
+  font-size : 24px;
+  margin-bottom : 100px;
+}

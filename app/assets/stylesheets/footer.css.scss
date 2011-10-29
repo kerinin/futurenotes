@@ -1,0 +1,17 @@
+#footer {
+  width : 100%;
+  border-top : 1px solid black;
+  line-height : 20px;
+  margin-top : 10px;
+  text-align : center;
+
+  div { display : inline; }
+  a { 
+    text-decoration : none; 
+    color : black
+  }
+  a:hover {
+    color : white;
+    background : black;
+  }
+}
