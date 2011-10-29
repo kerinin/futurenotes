@@ -9,7 +9,9 @@
     %body
 
       #header
-        #learn
+        #logo=link_to 'FutureNotes', '/'
+        
+        #about
           =link_to 'About', '/about'
           
         -if current_user.nil?

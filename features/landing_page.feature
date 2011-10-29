@@ -6,18 +6,6 @@ Feature: Landing Page
     And I should see '#common_tags'
     And I should see '#add_note'
     And I should see '#tos'
-    
-  @active
-  Scenario: Click login
-    Given I am on the home page
-    When I click 'Login'
-    Then I should be redirected to the sign-in page
-    
-  @active
-  Scenario: Click add
-    Given I am on the home page
-    When I click 'Add Note'
-    Then I should be redirected to the new note page
   
   @active
   Scenario: Search for term
@@ -33,9 +21,4 @@ Feature: Landing Page
     When I click 'Tag 1'
     Then I should be redirected to tag page 1
   
-  @active
-  Scenario: Click about
-    Given I am on the home page
-    When I click 'About'
-    Then I should be redirected to the about page
     

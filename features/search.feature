@@ -16,7 +16,7 @@ Feature: Search
     And I should not see the text 'Private Note 3'
     And I should not see the text 'Private Note 4'
     
-  @future
+  @pending
   Scenario: Non-delimited substring search
     Given I am on the home page
     When I type 'foo' into 'Search'

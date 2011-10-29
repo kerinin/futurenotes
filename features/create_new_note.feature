@@ -102,7 +102,7 @@ Feature: Create new notes
     And I should see the text 'Tag 2' under '#tags'
     And I should see 2 elements kind of ".tag"
 
-  @current
+  @active
   Scenario: Delimited input with alternate delimiter spacings
     Given I have authenticated from the home page
     And I am on the new note page
