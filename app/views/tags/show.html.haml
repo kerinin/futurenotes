@@ -2,30 +2,10 @@
 
 #user_notes
   -@user_notes.each do |note|
-    .user_note
-    .title
-      %h2= note.title
-    
-    -unless note.description.nil?
-      .description
-        =note.description
-        
-    -unless note.tags.empty?
-      .tags
-        -note.tags.each do |tag|
-          =link_to tag.name, tag_path(tag)
+    .user_note{:id => "note_#{note.id}"}
+      =render :partial => '/notes/results_block', :locals => {:note => note}
     
 #public_notes
   -@public_notes.each do |note|
-    .public_note
-      .title
-        %h2= note.title
-      
-      -unless note.description.nil?
-        .description
-          =note.description
-          
-      -unless note.tags.empty?
-        .tags
-          -note.tags.each do |tag|
-            =link_to tag.name, tag_path(tag)
+    .public_note{:id => "note_#{note.id}"}
+      =render :partial => '/notes/results_block', :locals => {:note => note}

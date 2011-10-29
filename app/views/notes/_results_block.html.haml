@@ -1,0 +1,11 @@
+.title
+  %h2= note.title
+
+-unless note.description.nil?
+  .description
+    =note.description
+    
+-unless note.tags.empty?
+  .tags
+    -note.tags.each do |tag|
+      =link_to tag.name, tag_path(tag)

@@ -20,7 +20,7 @@ Feature: Search by Tag
     And I should see the text 'Note 4'
     And I should not see the text 'Private Note 4'
     
-  @current
+  @active
   Scenario: View tag#show as authenticated user
     Given I have authenticated from the home page
     When I am on tag page 1
