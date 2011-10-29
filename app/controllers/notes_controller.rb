@@ -46,8 +46,13 @@ class NotesController < ApplicationController
     @tags = Tag.limit(20)
     
     unless params[:new_tag].nil?
-      tag = Tag.find_or_create_by_name( params[:new_tag] )
-      @note.tags << tag
+      # check for comma-delimited tag names
+      tag_names = params[:new_tag].split(',')
+      tag_names.each do |tag_name|
+        #use existing tag if available
+        tag = Tag.find_or_create_by_name( tag_name.strip )
+        @note.tags << tag
+      end
     end
 
     respond_to do |format|
