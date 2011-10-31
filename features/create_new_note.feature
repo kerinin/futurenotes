@@ -16,7 +16,7 @@ Feature: Create new notes
     And I type 'new note title' into 'Title'
     And I type 'new note description' into 'Description'
     When I press the button 'Create'
-    Then I should be redirected to note page 9
+    Then I should be redirected to the user home page
     And I should see the text 'Note was successfully created'
     
   @active
@@ -25,7 +25,7 @@ Feature: Create new notes
     And I am on the new note page
     And I type 'new note title' into 'Title'
     When I press the button 'Create'
-    Then I should be redirected to note page 9
+    Then I should be redirected to the user home page
     And I should see the text 'Note was successfully created'
       
   @active  
@@ -45,7 +45,7 @@ Feature: Create new notes
     And I type 'new note description' into 'Description'
     And I check "Tag 1"
     When I press the button 'Create'
-    Then I should be redirected to note page 9
+    Then I should be redirected to the user home page
     And I should see the text 'Note was successfully created'
     And I should see the text 'Tag 1' under '#tags'
     
@@ -57,7 +57,7 @@ Feature: Create new notes
     And I type 'new note description' into 'Description'
     And I type 'random tag' into 'New Tag'
     When I press the button 'Create'
-    Then I should be redirected to note page 9
+    Then I should be redirected to the user home page
     And I should see the text 'Note was successfully created'
     And I should see the text 'random tag' under '#tags'
     
@@ -69,11 +69,11 @@ Feature: Create new notes
     And I type 'new note description' into 'Description'
     And I type 'random tag, second random tag' into 'New Tag'
     When I press the button 'Create'
-    Then I should be redirected to note page 9
+    Then I should be redirected to the user home page
     And I should see the text 'Note was successfully created'
     And I should see the text 'random tag' under '#tags'
     And I should see the text 'second random tag' under '#tags'
-    And I should see 2 elements kind of ".tag"
+    And I should see 2 elements kind of "#note_9 .tag"
       
   @active
   Scenario: Basic input with existing tag (via input field)
@@ -83,7 +83,7 @@ Feature: Create new notes
     And I type 'new note description' into 'Description'
     And I type 'Tag 1' into 'New Tag'
     When I press the button 'Create'
-    Then I should be redirected to note page 9
+    Then I should be redirected to the user home page
     And I should see the text 'Note was successfully created'
     And I should see the text 'Tag 1' under '#tags'
     And I should see 1 elements kind of "#tag_1"
@@ -96,11 +96,11 @@ Feature: Create new notes
     And I type 'new note description' into 'Description'
     And I type 'Tag 1, Tag 2' into 'New Tag'
     When I press the button 'Create'
-    Then I should be redirected to note page 9
+    Then I should be redirected to the user home page
     And I should see the text 'Note was successfully created'
     And I should see the text 'Tag 1' under '#tags'
     And I should see the text 'Tag 2' under '#tags'
-    And I should see 2 elements kind of ".tag"
+    And I should see 2 elements kind of "#note_9 .tag"
 
   @active
   Scenario: Delimited input with alternate delimiter spacings
@@ -110,8 +110,8 @@ Feature: Create new notes
     And I type 'new note description' into 'Description'
     And I type 'Tag 1, Tag 2,Tag 3,   tag 1  ,   tag 5 foobar' into 'New Tag'
     When I press the button 'Create'
-    Then I should be redirected to note page 9
-    And I should see 5 elements kind of ".tag"
+    Then I should be redirected to the user home page
+    And I should see 5 elements kind of "#note_9 .tag"
               
   @active
   Scenario: Basic input with new tag (with different capitalization)
@@ -121,7 +121,7 @@ Feature: Create new notes
     And I type 'new note description' into 'Description'
     And I type 'tAg 1' into 'New Tag'
     When I press the button 'Create'
-    Then I should be redirected to note page 9
+    Then I should be redirected to the user home page
     And I should see the text 'Note was successfully created'
     And I should see the text 'tAg 1' under '#tags'
     And I should see 1 elements kind of "#tag_6"

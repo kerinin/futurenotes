@@ -51,13 +51,6 @@ Feature: Search by Tag
     Then I should be redirected to tag page 1
   
   @active
-  Scenario: Click tag from '/user/home'
-   Given I have authenticated from the home page
-   And I am on user page 1
-   When I click 'Tag 1'
-   Then I should be redirected to tag page 1
-  
-  @active
   Scenario: Click tag from note
     Given I am on note page 1
     When I click 'Tag 1'

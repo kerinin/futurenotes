@@ -8,7 +8,7 @@
 -unless note.tags.empty?
   .tags
     -note.tags.each do |tag|
-      =link_to tag.name, tag_path(tag)
+      .tag=link_to tag.name, tag_path(tag)
       
 -if !current_user.nil? && note.user == current_user
   .edit
