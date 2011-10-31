@@ -16,7 +16,7 @@ class TagsController < ApplicationController
     @tag = Tag.find(params[:id])
     
     # First find any notes whose tag matches the slug of @tag
-    #notes_with_tag = Note.joins(:tags).where('UPPER( tags.name ) == ?', @tag.name.upcase)
+    #notes_with_tag = Note.joins(:tags).where('UPPER( tags.name ) = ?', @tag.name.upcase)
     notes_with_tag = Note.with_tag_name( @tag.name )
     
     @user_notes = current_user.nil? ? [] : notes_with_tag.where( :user_id => current_user.id )

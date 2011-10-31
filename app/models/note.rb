@@ -8,7 +8,7 @@ class Note < ActiveRecord::Base
   
   acts_as_indexed :fields => [:title, :description, :indexed_tags]
   
-  scope :with_tag_name, lambda{ |name| joins(:tags).where('UPPER( tags.name ) == ?', name.upcase) }
+  scope :with_tag_name, lambda{ |name| joins(:tags).where('UPPER( tags.name ) = ?', name.upcase) }
   
   private
   

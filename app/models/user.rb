@@ -10,6 +10,6 @@ class User < ActiveRecord::Base
   has_many :notes
   
   def tags
-    Tag.includes(:notes).where('notes.user_id == ?', self.id)
+    Tag.includes(:notes).where('notes.user_id = ?', self.id)
   end
 end

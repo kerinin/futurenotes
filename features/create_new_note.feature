@@ -125,3 +125,7 @@ Feature: Create new notes
     And I should see the text 'Note was successfully created'
     And I should see the text 'tAg 1' under '#tags'
     And I should see 1 elements kind of "#tag_6"
+    
+  @current
+  Scenario: Unregistered user
+    
