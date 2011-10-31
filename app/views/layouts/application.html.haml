@@ -11,6 +11,9 @@
       #header
         #logo=link_to 'FutureNotes', '/'
         
+        -unless current_user.nil?
+          #my_notes
+            =link_to 'My Notes', user_path(current_user)
         #about
           =link_to 'About', '/about'
           
@@ -20,6 +23,12 @@
         -else
           #logout
             =link_to 'Logout', destroy_user_session_path
+            
+        #header_search
+          =form_tag '/search', :method => 'get' do
+            =label_tag :q, 'Search for:'
+            =text_field_tag :q
+            =submit_tag 'Search'
             
         #add_note
           =link_to 'Add Note', new_note_path

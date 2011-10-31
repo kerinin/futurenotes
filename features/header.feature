@@ -18,6 +18,13 @@ Feature: Header
     Then I should be redirected to the new note page
     
   @active
+  Scenario: Click my notes
+    Given I have authenticated from the home page
+    And I am on the home page
+    When I click 'My Notes'
+    Then I should be redirected to the user home page
+    
+  @active
   Scenario: Click about
     Given I am on the home page
     When I click 'About'
@@ -31,3 +38,12 @@ Feature: Header
     When I click 'Logout'
     Then I should be redirected to the home page
     And I should see the text 'Login'
+    
+  @current
+  Scenario: Search from header
+    Given I am on the about page
+    When I type 'Tag 1' into 'Search for:'
+    And I press the button 'Search'
+    Then I should be redirected to the search page
+    And I should see the text "Search results for 'Tag 1'"
+    And I should see '#note_1'
