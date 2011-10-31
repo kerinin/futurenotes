@@ -9,3 +9,8 @@
   .tags
     -note.tags.each do |tag|
       =link_to tag.name, tag_path(tag)
+      
+-if !current_user.nil? && note.user == current_user
+  .edit
+    =link_to 'Edit', edit_note_path(note)
+    =link_to 'Delete', note, :confirm => 'Are you sure?', :method => :delete

@@ -36,6 +36,7 @@ class NotesController < ApplicationController
   # GET /notes/1/edit
   def edit
     @note = Note.find(params[:id])
+    @tags = current_user.tags
   end
 
   # POST /notes
@@ -57,7 +58,7 @@ class NotesController < ApplicationController
 
     respond_to do |format|
       if @note.save
-        format.html { redirect_to @note, :notice => 'Note was successfully created.' }
+        format.html { redirect_to user_path(current_user), :notice => 'Note was successfully created.' }
         format.json { render :json => @note, :status => :created, :location => @note }
       else
         format.html { render :action => "new" }
@@ -73,7 +74,7 @@ class NotesController < ApplicationController
 
     respond_to do |format|
       if @note.update_attributes(params[:note])
-        format.html { redirect_to @note, :notice => 'Note was successfully updated.' }
+        format.html { redirect_to user_path(current_user), :notice => 'Note was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render :action => "edit" }
@@ -89,7 +90,7 @@ class NotesController < ApplicationController
     @note.destroy
 
     respond_to do |format|
-      format.html { redirect_to notes_url }
+      format.html { redirect_to user_path(current_user) }
       format.json { head :ok }
     end
   end

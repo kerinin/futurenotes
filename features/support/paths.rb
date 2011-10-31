@@ -30,6 +30,10 @@ module NavigationHelpers
       user_path($1)
     when /^note page (\d+)$/
       note_path($1)
+    when /^the user home page$/
+      user_path(1)
+    when /^edit note (\d+)$/
+      edit_note_path($1)
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

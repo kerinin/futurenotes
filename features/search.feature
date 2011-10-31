@@ -1,5 +1,5 @@
 Feature: Search
-  @current
+  @active
   Scenario: Basic search
     Given I am on the home page
     When I type 'foobar' into 'Search'
@@ -54,7 +54,7 @@ Feature: Search
     And I should not see the text 'Private Note 3'
     And I should not see the text 'Private Note 4'
           
-  @current
+  @active
   Scenario: Basic authenticated search
     Given I have authenticated from the home page
     And I am on the home page

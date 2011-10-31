@@ -6,4 +6,10 @@ class User < ActiveRecord::Base
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
+  
+  has_many :notes
+  
+  def tags
+    Tag.includes(:notes).where('notes.user_id == ?', self.id)
+  end
 end
