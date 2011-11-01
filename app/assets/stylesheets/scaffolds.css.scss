@@ -1,12 +1,51 @@
+$white: white;
+$blue: #4fa3f7;
+$light_blue: #abd1f7;
+$red: #f77f72;
+$grey: #555555;
+
 body {
   background-color: #fff;
   color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
+  font-family: 'Helvetica Neue', arial, helvetica, sans-serif;
   font-size: 13px;
-  line-height: 18px; }
+  line-height: 18px; 
+  background-image: 
+    -webkit-gradient(radial, 50% 300, 200, 50% 400, 600, from(rgba(0,0,0,0)), to(rgba(0,0,0,.65))), 
+    url('/assets/wood_background.jpg');
+  background-attachment:fixed;
+  margin: 0;
+  
+  #content {
+    width: 800px;
+    margin-top : 20px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 4em;
+    padding: 0;
+    background: $white;
+    color: $blue;
+    -webkit-box-shadow: 5px 5px 15px black;
+  }
+  
+  #main_content {
+    padding: 40px;
+    
+    
+    a {
+      color: $grey;
+      text-decoration: none;
+      &:visited {
+        color: $grey; }
+      &:hover {
+        border-bottom: 1px solid $red
+      }
+    }
+  }
+}
 
 p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
+  font-family: 'Helvetica Neue', arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px; }
 
@@ -14,14 +53,6 @@ pre {
   background-color: #eee;
   padding: 10px;
   font-size: 11px; }
-
-a {
-  color: #000;
-  &:visited {
-    color: #666; }
-  &:hover {
-    color: #fff;
-    background-color: #000; } }
 
 div {
   &.field, &.actions {

@@ -1,20 +1,32 @@
 #header {
-  width : 100%;
+  $text: #444;
+  $text_highlight: #c7c6bb;
+  
+  width : 776px;
   border-bottom : 1px solid black;
+  height : 36px;
+  background: url('/assets/top_border.png');
+  padding: 12px;
+  color : $text;
+  text-shadow: 1px 1px 1px $text_highlight;
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .65);
   
   div { display : inline; }
+  form { display : inline; }
   a { 
-    text-decoration : none; 
-    color : black
-  }
-  a:hover {
-    color : white;
-    background : black;
+    color : $text;
+    text-decoration: none;
+    text-shadow: 1px 1px 1px $text_highlight;
+    
+    &:hover {
+      text-decoration: underline;
+    }
   }
   
-  line-height : 40px;
+  line-height : 36px;
   #logo {
     font-size : 36px;
+    font-family: 'Rokkitt', serif;
   }
   
   #add_note {

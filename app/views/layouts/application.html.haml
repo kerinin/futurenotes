@@ -5,38 +5,42 @@
     = stylesheet_link_tag    "application"
     = javascript_include_tag "application"
     = csrf_meta_tags
+    %link{ :href => 'http://fonts.googleapis.com/css?family=Arvo:400,700,400italic,700italic|Sorts+Mill+Goudy|Lora|Coustard|Arimo|Droid+Sans+Mono|Rokkitt:400,700|Josefin+Slab|Terminal+Dosis',:rel => 'stylesheet', :type => 'text/css' }
+    
     
     %body
 
-      #header
-        #logo=link_to 'FutureNotes', '/'
+      #content
+        #header
+          #logo=link_to 'FutureNotes', '/'
         
-        -unless current_user.nil?
-          #my_notes
-            =link_to 'My Notes', user_path(current_user)
-        #about
-          =link_to 'About', '/about'
+          -unless current_user.nil?
+            #my_notes
+              =link_to 'My Notes', user_path(current_user)
+          #about
+            =link_to 'About', '/about'
           
-        -if current_user.nil?
-          #login
-            =link_to 'Login', new_user_session_path
-        -else
-          #logout
-            =link_to 'Logout', destroy_user_session_path
+          -if current_user.nil?
+            #login
+              =link_to 'Login', new_user_session_path
+          -else
+            #logout
+              =link_to 'Logout', destroy_user_session_path
             
-        #header_search
-          =form_tag '/search', :method => 'get' do
-            =label_tag :q, 'Search for:'
-            =text_field_tag :q
-            =submit_tag 'Search'
+          #header_search
+            =form_tag '/search', :method => 'get' do
+              =label_tag :q, 'Search for:'
+              =text_field_tag :q
+              =submit_tag 'Search'
             
-        #add_note
-          =link_to 'Add Note', new_note_path
+          #add_note
+            =link_to 'Add Note', new_note_path
         
-      %p.notice= notice
-      %p.alert= alert
+        %p.notice= notice
+        %p.alert= alert
 
-      = yield
+        #main_content
+          = yield
 
       #footer
         #about
@@ -44,6 +48,6 @@
         #tos
           =link_to 'Terms of Service', '/tos'
         #contact
-        
+      
         &copy; Ryan Michael
 
