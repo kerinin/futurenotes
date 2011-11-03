@@ -10,13 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111024021908) do
+ActiveRecord::Schema.define(:version => 20111103022753) do
 
   create_table "notes", :force => true do |t|
     t.integer  "user_id"
-    t.string   "title"
-    t.string   "description"
-    t.boolean  "private",     :default => false
+    t.text     "title",       :limit => 255
+    t.text     "description", :limit => 255
+    t.boolean  "private",                    :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

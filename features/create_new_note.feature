@@ -9,12 +9,12 @@ Feature: Create new notes
     And I should see '#tag_1'
     And I should see '#save'
 
-  @active
+  @current
   Scenario: Basic Input
     Given I have authenticated from the home page
     And I am on the new note page
-    And I type 'new note title' into 'Title'
-    And I type 'new note description' into 'Description'
+    And I type 'new note title asdlfkjasd;fhasd;fhasdlkfja;sdhf;lasdhflasjdfl;kjasdkjfhasdlkfjasldfkjsdlfkjasdfljasdlf;hasdfhasldkjflkasdjfds asdlfkj al;sdf alsdkj fladkjf asd lkasdjfl; ksadjf' into 'Title'
+    And I type 'new note description asldkfj alskdjf laskdj flkasjd lasdj lfjasdlf alk dsflkasdj flkj asdlfj lasfj lasdj flkadjs flksajd fljs adlfkj sdalkfj asdlfj laskj flkjs dflkjsdlfkj dsflkj lksdj fl' into 'Description'
     When I press the button 'Create'
     Then I should be redirected to the user home page
     And I should see the text 'Note was successfully created'
