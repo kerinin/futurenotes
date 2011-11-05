@@ -1,13 +1,19 @@
 Feature: Create new notes
-  @active
+  @to_screenshot
   Scenario: Load new
     Given I am on the new note page
     Then I should see '#title'
     And I should see '#description'
+    And I should see '#scope'
     And I should see '#new_tag'
     And I should see '#tags'
     And I should see '#tag_1'
     And I should see '#save'
+    
+    And I should see '#description input[type=textarea]'
+    And I should see the text 'Private' under '#scope'
+    And I should see the text 'Public' under '#scope'
+    And I should see '#scope input[type=radio]'
 
   @current
   Scenario: Basic Input
@@ -61,7 +67,7 @@ Feature: Create new notes
     And I should see the text 'Note was successfully created'
     And I should see the text 'random tag' under '#tags'
     
-  @active
+  @to_functional
   Scenario: Delimited input with new tags
     Given I have authenticated from the home page
     And I am on the new note page
@@ -73,9 +79,8 @@ Feature: Create new notes
     And I should see the text 'Note was successfully created'
     And I should see the text 'random tag' under '#tags'
     And I should see the text 'second random tag' under '#tags'
-    And I should see 2 elements kind of "#note_9 .tag"
       
-  @active
+  @to_functional
   Scenario: Basic input with existing tag (via input field)
     Given I have authenticated from the home page
     And I am on the new note page
@@ -88,7 +93,7 @@ Feature: Create new notes
     And I should see the text 'Tag 1' under '#tags'
     And I should see 1 elements kind of "#tag_1"
 
-  @active
+  @to_functional
   Scenario: Delimited input with existing tag (via input field)
     Given I have authenticated from the home page
     And I am on the new note page
@@ -102,7 +107,7 @@ Feature: Create new notes
     And I should see the text 'Tag 2' under '#tags'
     And I should see 2 elements kind of "#note_9 .tag"
 
-  @active
+  @to_functional
   Scenario: Delimited input with alternate delimiter spacings
     Given I have authenticated from the home page
     And I am on the new note page
@@ -113,7 +118,7 @@ Feature: Create new notes
     Then I should be redirected to the user home page
     And I should see 5 elements kind of "#note_9 .tag"
               
-  @active
+  @to_functional
   Scenario: Basic input with new tag (with different capitalization)
     Given I have authenticated from the home page
     And I am on the new note page
@@ -126,6 +131,7 @@ Feature: Create new notes
     And I should see the text 'tAg 1' under '#tags'
     And I should see 1 elements kind of "#tag_6"
     
-  @current
+  @pending
   Scenario: Unregistered user
+  
     

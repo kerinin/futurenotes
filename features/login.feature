@@ -4,7 +4,7 @@ Feature: User login
     Given I am on the home page
     When I click 'Login'
     And I login as valid user 'Alice'
-    Then I should be redirected to user page 2
+    Then I should be redirected to the user home page
     And I should see '#logout'
     
   @active
@@ -62,4 +62,4 @@ Feature: User login
   @active
   Scenario: Step check
     Given I have authenticated from the home page
-    Then I should be redirected to user page 1
+    Then I should be redirected to the user home page

@@ -10,8 +10,10 @@ Feature: Search
     
     And I should see the text 'Note 1'
     And I should see the text 'Description 1' under '#public_notes'
-    And I should see the text 'Tag 1' under '#note_1'
-    And I should see the text 'Tag 2' under '#note_1'
+    #And I should see the text 'Tag 1' under '#note_1'
+    #And I should see the text 'Tag 2' under '#note_1'
+    And I should see the text 'Tag 1'
+    And I should see the text 'Tag 2'
     
     And I should not see the text 'Note 2'
     And I should see the text 'Note 3'

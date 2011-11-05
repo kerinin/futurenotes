@@ -10,7 +10,7 @@
         =link_to tag.name, user_path(@user, :filter_by_tag => tag.name)
     #by_search
   
-  -@notes.each do |note|
+  -@notes.newest_first.each do |note|
     .note{:id => "note_#{note.id}"}
       =render :partial => 'notes/results_block', :locals => {:note => note}
     

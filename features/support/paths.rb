@@ -24,16 +24,22 @@ module NavigationHelpers
       '/about'
     when 'the sign-in page'
       '/users/sign_in'
+      
+    when 'the test note edit page'
+      edit_note_path(@test_note)
+    when 'the test tag page'
+      tag_path(@test_tag)
+      
     when /^tag page (\d+)$/
-      tag_path($1)
+      tag_path( @tags[$1.to_i-1] )
     when /^user page (\d+)$/
       user_path($1)
     when /^note page (\d+)$/
-      note_path($1)
+      note_path( @notes[$1.to_i-1] )
     when /^the user home page$/
-      user_path(1)
+      user_path( @current_user )
     when /^edit note (\d+)$/
-      edit_note_path($1)
+      edit_note_path( @notes[$1.to_i-1] )
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

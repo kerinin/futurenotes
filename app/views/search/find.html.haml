@@ -2,10 +2,10 @@
 
 #user_notes
   -@user_notes.each do |note|
-    .user_note{:id => "note_#{note.id}"}
+    .note.user_note{:id => "note_#{note.id}"}
       =render :partial => '/notes/results_block', :locals => {:note => note}
     
 #public_notes
   -@public_notes.each do |note|
-    .public_note{:id => "note_#{note.id}"}
+    .note.public_note{:id => "note_#{note.id}"}
       =render :partial => '/notes/results_block', :locals => {:note => note}

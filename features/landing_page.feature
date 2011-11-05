@@ -15,10 +15,11 @@ Feature: Landing Page
     Then I should be redirected to the search results page
     And I should see the text 'search_text'
   
-  @active
+  @current
   Scenario: Click tag from list
-    Given I am on the home page
-    When I click 'Tag 1'
-    Then I should be redirected to tag page 1
+    Given a test tag named 'Test Tag'
+    And I am on the home page
+    When I click 'Test Tag'
+    Then I should be redirected to the test tag page
   
     

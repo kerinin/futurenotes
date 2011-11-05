@@ -1,7 +1,8 @@
 Feature: Header
   @active
   Scenario: Clicking logo
-    Given I am on note page 1
+    Given I have authenticated from the home page
+    And I am on the user home page
     When I click 'FutureNotes'
     Then I should be redirected to the home page
   
@@ -39,11 +40,10 @@ Feature: Header
     Then I should be redirected to the home page
     And I should see the text 'Login'
     
-  @current
+  @active
   Scenario: Search from header
     Given I am on the about page
-    When I type 'Tag 1' into 'Search for:'
+    When I type 'Note 1' into 'Search for:'
     And I press the button 'Search'
     Then I should be redirected to the search page
-    And I should see the text "Search results for 'Tag 1'"
-    And I should see '#note_1'
+    And I should see the text "Search results for 'Note 1'"
