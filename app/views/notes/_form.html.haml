@@ -28,7 +28,7 @@
   #new_tag.field
     =label :new, :tag, "New Tag"
     %br
-    =text_field_tag :new_tag
+    =text_field_tag :new_tag, {}, {:class => 'autocomplete_tags'}
       
   #save.actions
     = f.submit

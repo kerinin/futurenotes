@@ -3,7 +3,6 @@ Implementation Details
 
 * Cache where helpful, figure out a way for pushes to reset cache (?)
 * Access control
-* auto-add previous tags
 * markdown
 
 
