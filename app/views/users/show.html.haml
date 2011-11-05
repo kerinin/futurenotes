@@ -1,7 +1,7 @@
 =@user.email
 
 #new_note
-  =render :partial => 'notes/form', :locals => {:note => Note.new}
+  =render :partial => 'notes/form', :locals => {:note => @new_note}
 
 #user_notes
   #filter

@@ -11,6 +11,8 @@ class Note < ActiveRecord::Base
   default_scope :order => 'updated_at DESC'
   scope :with_tag_name, lambda{ |name| joins(:tags).where('UPPER( tags.name ) = ?', name.upcase) }
   scope :newest_first, lambda{ reorder('updated_at DESC') }
+  scope :last_created_first, lambda{ reorder('created_at DESC') }
+  
   private
   
   def indexed_tags

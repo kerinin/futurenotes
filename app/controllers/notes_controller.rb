@@ -26,6 +26,10 @@ class NotesController < ApplicationController
   def new
     @note = Note.new
     @tags = Tag.limit(20)
+    
+    unless current_user.notes.empty?
+      @note.tags = current_user.notes.last_created_first.first.tags
+    end
 
     respond_to do |format|
       format.html # new.html.erb
