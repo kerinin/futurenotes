@@ -2,16 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$white: white;
+$blue: #4fa3f7;
+$light_blue: #abd1f7;
+$red: #f77f72;
+$grey: #555555;
+
 #search_bar {
   text-align : center;
-  font-size : 50px;
-  line-height : 60px;
+  font-size : 30px;
+  line-height : 32px;
   margin-top : 100px;
-  margin-bottom : 50px;
+  margin-bottom : 30px;
   
   input {
-    height : 50px;
-    font-size : 50px;
+    height : 30px;
+    font-size : 30px;
     color : blue
   }
 }
@@ -20,4 +26,7 @@
   text-align : center;
   font-size : 24px;
   margin-bottom : 100px;
+  line-height: 28px;
+  
+  .separator { color: $light_blue; display: inline; }
 }

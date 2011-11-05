@@ -11,7 +11,7 @@ body {
   font-size: 13px;
   line-height: 18px; 
   background-image: 
-    -webkit-gradient(radial, 50% 300, 200, 50% 400, 600, from(rgba(0,0,0,0)), to(rgba(0,0,0,.65))), 
+    -webkit-gradient(radial, 50% 300, 200, 50% 400, 600, from(rgba(0,0,0,.4)), to(rgba(0,0,0,.7))), 
     url('/assets/wood_background.jpg');
   background-attachment:fixed;
   margin: 0;
@@ -24,7 +24,7 @@ body {
     margin-bottom: 4em;
     padding: 0;
     background: $white;
-    color: $blue;
+    color: $grey;
     -webkit-box-shadow: 5px 5px 15px black;
   }
   
@@ -33,10 +33,10 @@ body {
     
     
     a {
-      color: $grey;
+      color: $blue;
       text-decoration: none;
       &:visited {
-        color: $grey; }
+        color: $blue; }
       &:hover {
         border-bottom: 1px solid $red
       }
@@ -48,7 +48,6 @@ p, ol, ul, td {
   font-family: 'Helvetica Neue', arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px; }
-
 pre {
   background-color: #eee;
   padding: 10px;

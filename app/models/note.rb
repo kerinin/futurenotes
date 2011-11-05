@@ -8,8 +8,9 @@ class Note < ActiveRecord::Base
   
   acts_as_indexed :fields => [:title, :description, :indexed_tags]
   
+  default_scope :order => 'updated_at DESC'
   scope :with_tag_name, lambda{ |name| joins(:tags).where('UPPER( tags.name ) = ?', name.upcase) }
-  scope :newest_first, lambda{ reorder('created_at DESC') }
+  scope :newest_first, lambda{ reorder('updated_at DESC') }
   private
   
   def indexed_tags

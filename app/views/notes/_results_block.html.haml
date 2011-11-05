@@ -9,6 +9,8 @@
   .tags
     -note.tags.each do |tag|
       .tag=link_to tag.name, tag_path(tag)
+      -unless tag == note.tags.last
+        .separator &#149;
       
 -if !current_user.nil? && note.user == current_user
   .edit

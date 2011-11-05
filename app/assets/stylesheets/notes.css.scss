@@ -2,46 +2,96 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+$white: white;
+$blue: #4fa3f7;
+$light_blue: #abd1f7;
+$red: #f77f72;
+$grey: #555555;
+$light_grey: #777;
 
-.title {
-  font-size : 28px;
-  font-weight : 400;
+$title_size: 34px;
+$title_line_height: 36px;
+$title_font: 'Rokkitt';
 
-  // font-family: 'Sorts Mill Goudy', serif;
-  // 400, 400i
+$description_size: 18px;
+$description_line_height: 20px;
+$description_font: 'Arvo';
+
+#new_note, #edit_note {
+  #title {
+    input {
+      width: 100%;
+      height: $title_line_height;
+      font-size: $title_size;
+      line-height: $title_line_height;
+      font-family: $title_font;
+      color: $grey;
+    }
+  }
   
-  // font-family: 'Lora', serif;
-  // 400, 400i, 700, 700i
+  #description {
+    textarea {
+      width: 100%;
+      height: $description_line_height * 10;
+      font-size: $description_size;
+      line-height: $description_line_height;
+      font-family: $description_font;
+      color: $light_grey;
+    }
+  }
   
-  // font-family: 'Coustard', serif;
-  // 400, 900
+  #new_tag {
+    display: inline;
+    input {
+      width: 50%
+    }
+  }
   
-  // font-family: 'Poly', serif;
-  // 400
+  //#tags
   
-  // font-family: 'Terminal Dosis', sans-serif;
-  // 200, 300, 400, 500, 600, 700, 800
-  
-  // font-family: 'Radley', serif;
-  // 400
-  
-  font-family: 'Rokkitt';
+  #save {
+    float: right;
+    display: inline;
+  }
 }
 
-.description {
-  font-size : 18px;
-  font-weight : 400;
+.note {
+  margin-bottom: 30px;
 
-  // 3 font-family: 'Arimo', sans-serif;
-  // 400, 400i, 700, 700i
+  .title {
+    font-family: $title_font;
+    font-weight : 400;
   
-  // font-family: 'Josefin Slab', serif;
-  // 100, 100i, 300, 300i, 400, 400i, 600, 600i, 700, 700i
-  
-  font-family: 'Arvo', serif;
-  // 400, 400i, 700, 700i
-}
+    h2 {
+      font-size : $title_size;
+      line-height: $title_line_height;  
+    }
+  }
 
-.code {
- font-family: 'Inconsolata';
+  .description {
+    font-size : $description_size;
+    line-height: $description_line_height;
+    font-family: $description_font;
+    font-weight : 400;
+    text-align: justify;
+    color: $light-grey;
+    margin-bottom: 10px;
+  }
+
+  .code {
+   font-family: 'Inconsolata';
+  }
+
+  .tags {
+    font-family: $title_font;
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 5px;
+  
+    .separator { color: $light_blue; display: inline; }
+  }
+
+  .edit {
+    
+  }
 }

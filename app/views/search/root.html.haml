@@ -6,5 +6,8 @@
     
 
 #common_tags
+  #h2 Existing tags
   -@tags.all.each do |tag|
     =link_to tag.name, tag_path(tag)
+    -unless tag == @tags.last
+      .separator &#149;
