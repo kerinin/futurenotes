@@ -10,39 +10,6 @@ Feature: Search by Tag
     And I should not see the text 'Private Note 1'
     And I should see the text 'Note 4'
     And I should not see the text 'Private Note 4'
-    
-  @to_functional
-  Scenario: View tag#show with different spelling
-    Given I am on tag page 4
-    Then I should see the text 'tag 1'
-    And I should see the text 'Note 1'
-    And I should not see the text 'Private Note 1'
-    And I should see the text 'Note 4'
-    And I should not see the text 'Private Note 4'
-    
-  @to_functional
-  Scenario: View tag#show as authenticated user
-    Given I have authenticated from the home page
-    When I am on tag page 1
-    Then I should see the text 'Tag 1'
-    And I should see the text 'Note 1'
-    And I should see the text 'Private Note 1'
-    And I should see the text 'Private Description 1' under '#user_notes'
-    And I should see the text 'Tag 1' under '#user_notes'
-    And I should see the text 'Tag 2' under '#user_notes'
-    And I should see the text 'Note 4'
-    And I should see the text 'Private Note 4'
-
-  @to_functional
-  Scenario: View tag#show as another authenticated user
-    Given I am on the sign-in page
-    And I login as valid user 'Alice'
-    When I am on tag page 1
-    Then I should see the text 'Tag 1'
-    And I should see the text 'Note 1'
-    And I should not see the text 'Private Note 1'
-    And I should see the text 'Note 4'
-    And I should not see the text 'Private Note 4'
         
   @active
   Scenario: Click tag from the home page

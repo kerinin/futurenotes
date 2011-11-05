@@ -1,9 +1,45 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  title: MyString
-  description: MyString
+  title: Note 1 foobar
+  description: Description 1
+  user: current
 
 two:
-  title: MyString
-  description: MyString
+  title: Note 2
+  description: Description 2
+  user: current
+
+three:
+  title: Note 3
+  description: Description 3 foobar
+  user: current
+  
+four: 
+  title: Note 4
+  description: Description 4
+  user: current
+
+private_one: 
+  title: Private Note 1 foobar
+  description: Private Description 1
+  user: current
+  private: true
+  
+private_two:
+  title: Private Note 2
+  description: Private Description 2
+  user: current
+  private: true
+  
+private_three:
+  title: Private Note 3
+  description: Private Description 3
+  user: current
+  private: true
+  
+private_four:
+  title: Private Note 4
+  description: Private Description 4
+  user: current
+  private: true
