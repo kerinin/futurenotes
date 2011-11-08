@@ -1,5 +1,3 @@
-@import 'variables';
-
 #footer {
   width : 100%;
   line-height : 20px;
@@ -11,9 +9,9 @@
   div { display : inline; }
   a { 
     text-decoration : none; 
-    color : $grey
+    color : $grey;
   }
   a:hover {
-    color : $light_grey
+    color: $light_grey;
   }
 }

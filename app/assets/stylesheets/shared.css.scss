@@ -1,0 +1,44 @@
+h1 {
+  font-size: 42px;
+  font-family: 'Rokkitt';
+}
+
+.section {
+  clear: both;
+  margin-top: 50px;
+}
+
+p {
+  margin-bottom: 1em;
+}
+
+button {
+  &, a {
+    text-shadow: 0 1px 3px darken($blue, 25%);
+  }
+  padding: 5px 20px;
+  background-color: $blue;
+  border: 1px solid $blue;
+  border-radius: 6px;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(lighten($blue, 5%)), to( darken($blue, 15%)));
+  
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+input[type=submit] {
+  &, a {
+    text-shadow: 0 1px 3px darken($grey, 25%);
+    color: white;
+  }
+  padding: .5em 1em;
+  background-color: $grey;
+  border: 1px solid $grey;
+  border-radius: 6px;
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(lighten($grey, 15%)), to( darken($grey, 5%)));
+  
+  &:hover {
+    cursor: pointer;
+  }
+}
