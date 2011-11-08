@@ -1,19 +1,19 @@
+@import 'variables';
+
 #footer {
   width : 100%;
-  border-top : 1px solid black;
   line-height : 20px;
   margin: 0;
   margin-top : 10px;
   text-align : center;
-  background: rgba(255,255,255,.25);
-
+  color: $grey;
+  
   div { display : inline; }
   a { 
     text-decoration : none; 
-    color : black
+    color : $grey
   }
   a:hover {
-    color : white;
-    background : black;
+    color : $light_grey
   }
 }

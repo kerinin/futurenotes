@@ -2,16 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$white: white;
-$blue: #4fa3f7;
-$light_blue: #abd1f7;
-$red: #f77f72;
-$grey: #555555;
+@import 'variables';
 
 #search_bar {
   text-align : center;
-  font-size : 30px;
-  line-height : 32px;
+  font-size : 22px;
+  line-height : 18px;
   margin-top : 100px;
   margin-bottom : 30px;
   
@@ -20,13 +16,18 @@ $grey: #555555;
     font-size : 30px;
     color : blue
   }
+  input[type=submit] { display: none;}
+  input[type=search] {
+    font-size: 18px;
+    width: 300px;
+  }
 }
 
 #common_tags {
   text-align : center;
-  font-size : 24px;
+  font-size : 18px;
   margin-bottom : 100px;
-  line-height: 28px;
+  line-height: 24px;
   
   .separator { color: $light_blue; display: inline; }
 }

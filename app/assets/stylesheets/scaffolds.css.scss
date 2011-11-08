@@ -1,8 +1,4 @@
-$white: white;
-$blue: #4fa3f7;
-$light_blue: #abd1f7;
-$red: #f77f72;
-$grey: #555555;
+@import 'variables';
 
 body {
   background-color: #fff;
@@ -17,21 +13,16 @@ body {
   margin: 0;
   
   #content {
-    width: 800px;
+    width: 720px;
     margin-top : 20px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 4em;
-    padding: 0;
+    padding: 40px;
     background: $white;
     color: $grey;
     -webkit-box-shadow: 5px 5px 15px black;
-  }
-  
-  #main_content {
-    padding: 40px;
-    
-    
+
     a {
       color: $blue;
       text-decoration: none;

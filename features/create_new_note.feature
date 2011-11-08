@@ -53,7 +53,7 @@ Feature: Create new notes
     When I press the button 'Create'
     Then I should be redirected to the user home page
     And I should see the text 'Note was successfully created'
-    And I should see the text 'Tag 1' under '#tags'
+    # And I should see the text 'Tag 1' under '#tags'
     
   @active
   Scenario: Basic input with new tag
@@ -65,7 +65,7 @@ Feature: Create new notes
     When I press the button 'Create'
     Then I should be redirected to the user home page
     And I should see the text 'Note was successfully created'
-    And I should see the text 'random tag' under '#tags'
+    # And I should see the text 'random tag' under '#tags'
     
   @pending
   Scenario: Unregistered user

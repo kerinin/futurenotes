@@ -9,3 +9,9 @@ $.getJSON('/tags', function(data) {
     multipleSeparator: ', '
   });
 } );
+
+$.watermarker.setDefaults({ color: '#ccc', fallback: true });
+
+$(document).ready( function() {
+  $('input.placeholder').watermark();
+})

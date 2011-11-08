@@ -1,8 +1,8 @@
 Feature: When creating a new note, automatically add the tags from the last note created
 Reduces interface interaction, increases tag usage
 
-  @active
-  Scenario: From user home page
+  @deprecated
+  Scenario: From user home page check last tags
     Given I have authenticated from the home page
     And I am on the user home page
     When I type 'new note title' into 'Title'
@@ -21,7 +21,7 @@ Reduces interface interaction, increases tag usage
     And the "tag 5 foobar" checkbox should not be checked
   
   @active
-  Scenario: From new notes page
+  Scenario: From new notes page check last tags
     Given I have authenticated from the home page
     And I am on the new note page
     When I type 'new note title' into 'Title'
@@ -39,3 +39,9 @@ Reduces interface interaction, increases tag usage
     And the "tag 1" checkbox should not be checked
     And the "tag 5 foobar" checkbox should not be checked
 
+  @pending
+  Scenario: From tag#show page check current tag
+  
+  @pending
+  Scenario: From user#show w/ tag filter check filtering tags
+  

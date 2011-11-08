@@ -1,5 +1,5 @@
 Feature: User home page
-  @active
+  @deprecated
   Scenario: Add note from user homepage
     Given I have authenticated from the home page
     And I am on the user home page

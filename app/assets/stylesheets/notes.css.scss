@@ -2,12 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$white: white;
-$blue: #4fa3f7;
-$light_blue: #abd1f7;
-$red: #f77f72;
-$grey: #555555;
-$light_grey: #777;
+@import 'variables';
 
 $title_size: 34px;
 $title_line_height: 36px;
@@ -43,7 +38,15 @@ $description_font: 'Arvo';
   #new_tag {
     display: inline;
     input {
-      width: 50%
+      width: 50%;
+      display: inline;
+    }
+  }
+  #scope {
+    display: inline;
+    margin-left: 40px;
+    input {
+      margin-left: 20px;
     }
   }
   

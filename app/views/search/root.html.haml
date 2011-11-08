@@ -1,7 +1,7 @@
 #search_bar
   =form_tag '/search', :method => 'get' do
     =label_tag :q, 'Search for:'
-    =text_field_tag :q
+    =text_field_tag :q, nil, {:type => :search, :results => 10}
     =submit_tag 'Search'
     
 

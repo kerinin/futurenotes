@@ -1,15 +1,17 @@
-=@user.email
+#title_bar
+  %h1= "#{@user.email}'s notes"
 
-#new_note
-  =render :partial => 'notes/form', :locals => {:note => @new_note}
-
-#user_notes
   #filter
     #by_tag
+      tags:
       -@user.tags.each do |tag|
         =link_to tag.name, user_path(@user, :filter_by_tag => tag.name)
     #by_search
-  
+
+#new_note.section
+  =#render :partial => 'notes/form', :locals => {:note => @new_note}
+
+#user_notes.section
   -@notes.newest_first.each do |note|
     .note{:id => "note_#{note.id}"}
       =render :partial => 'notes/results_block', :locals => {:note => note}

@@ -27,7 +27,7 @@ class NotesController < ApplicationController
     @note = Note.new
     @tags = Tag.limit(20)
     
-    unless current_user.notes.empty?
+    unless current_user.nil? || current_user.notes.empty?
       @note.tags = current_user.notes.last_created_first.first.tags
     end
 

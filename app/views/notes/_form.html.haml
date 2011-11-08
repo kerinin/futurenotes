@@ -12,12 +12,12 @@
   #title.field
     =f.label :title
     %br
-    =f.text_field :title
+    =f.text_field :title, {:class => :placeholder, :placeholder => 'What do you want to remember?', :size => 100}
   
   #description.field
     =f.label :description
     %br
-    =f.text_area :description
+    =f.text_area :description, {:class => :placeholder, :placeholder => 'More details here...'}
   
   #tags.field
     -tags.each do |tag|
@@ -25,10 +25,17 @@
         =check_box_tag "note[tag_ids][]", tag.id, note.tag_ids.include?(tag.id), {:id =>"note_tag_ids_#{tag.id}"}
         =label :note, "tag_ids", tag.name, :value => tag.id
 
-  #new_tag.field
+  #new_tag
     =label :new, :tag, "New Tag"
     %br
-    =text_field_tag :new_tag, {}, {:class => 'autocomplete_tags'}
+    =text_field_tag :new_tag, {}, {:class => 'autocomplete_tags placeholder', :placeholder => "Add comma-separated tags like 'Reading Notes, Ulysses'"}
       
+  #scope
+    =f.radio_button :private, false
+    =f.label :private, "Share", :value => false
+  
+    =f.radio_button :private, true
+    =f.label :private, "Keep Private", :value => true
+    
   #save.actions
     = f.submit

@@ -2,6 +2,23 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#user_notes {
-  clear: both;
+@import 'variables';
+
+body {
+  #title_bar {
+    text-align: center;
+    h1 {
+      color: $grey;
+      width: 100%;
+      padding-bottom: 14px;
+      margin-bottom: 4px;
+      border-bottom: 1px solid $blue;
+    }
+  
+    color: $lighter_grey;
+    a, a:visited { color: $light_blue; }
+  }
+  #user_notes {
+    clear: both;
+  }
 }

@@ -1,0 +1,10 @@
+#title_bar
+  %h1
+    Add a note 
+    -unless current_user.nil?
+      for
+      =current_user.email
+
+.section
+  = render 'form'
+

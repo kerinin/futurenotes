@@ -4,6 +4,8 @@ Implementation Details
 * Cache where helpful, figure out a way for pushes to reset cache (?)
 * Access control
 * markdown
+* bookmark to add notes
+* clean up user signup flow
 
 
 

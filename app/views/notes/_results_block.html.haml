@@ -16,3 +16,8 @@
   .edit
     =link_to 'Edit', edit_note_path(note)
     =link_to 'Delete', note, :confirm => 'Are you sure?', :method => :delete
+    
+    -if note.private
+      (private note)
+    -else
+      (shared note)

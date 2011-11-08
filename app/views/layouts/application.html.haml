@@ -10,43 +10,44 @@
     
     %body
 
-      #content
-        #header
-          #logo=link_to 'FutureNotes', '/'
+      #header
+        #logo=link_to 'FutureNotes', '/'
+      
+        -unless current_user.nil?
+          #my_notes
+            =link_to 'My Notes', user_path(current_user)
+        #about
+          =link_to 'About', '/about'
         
-          -unless current_user.nil?
-            #my_notes
-              =link_to 'My Notes', user_path(current_user)
-          #about
-            =link_to 'About', '/about'
+        -if current_user.nil?
+          #login
+            =link_to 'Login', new_user_session_path
+        -else
+          #logout
+            =link_to 'Logout', destroy_user_session_path
           
-          -if current_user.nil?
-            #login
-              =link_to 'Login', new_user_session_path
-          -else
-            #logout
-              =link_to 'Logout', destroy_user_session_path
-            
-          #header_search
-            =form_tag '/search', :method => 'get' do
-              =label_tag :q, 'Search for:'
-              =text_field_tag :q
-              =submit_tag 'Search'
-            
-          #add_note
-            =link_to 'Add Note', new_note_path
+        #header_search
+          =form_tag '/search', :method => 'get' do
+            =label_tag :q, 'Search for:'
+            =text_field_tag :q
+            =submit_tag 'Search'
+          
+        #add_note
+          %button{:type => :button}=link_to 'Add Note', new_note_path
         
         %p.notice= notice
         %p.alert= alert
 
-        #main_content
-          = yield
+      #content
+        = yield
 
       #footer
         #about
           =link_to 'About', '/about'
+        &#149;
         #tos
           =link_to 'Terms of Service', '/tos'
+        &#149;
         #contact
       
         &copy; Ryan Michael

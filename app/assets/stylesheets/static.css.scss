@@ -1,3 +1,32 @@
 // Place all the styles related to the Static controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import 'variables';
+
+.big, .big p, p.big, .big ul{
+  font-size: 32px;
+  line-height: 36px;
+  font-family: 'Rokkitt';
+}
+
+.medium, .medium p, p.medium, .medium ul, .medium li {
+  font-size: 20px;
+  line-height: 34px;
+  font-family: 'Arvo';
+  color: $light_grey;
+}
+
+#about, #tos {
+  ul {
+    font-size: 18px;
+    font-family: 'Arvo';
+    line-height: 26px;
+    color: $light_grey;
+    margin: 0;
+    list-style-type:circle;
+    li { 
+      margin-left: 1em;
+    }
+  }
+}
