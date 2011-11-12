@@ -5,7 +5,7 @@ Feature: User login
     When I click 'Login'
     And I login as valid user 'Alice'
     Then I should be redirected to the user home page
-    And I should see '#logout'
+    And I should see the text 'Logout'
     
   @active
   Scenario: Failed login from /

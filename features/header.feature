@@ -1,10 +1,16 @@
 Feature: Header
   @active
   Scenario: Clicking logo
+    Given I am on the tos page
+    When I click 'FutureNotes'
+    Then I should be redirected to the home page
+    
+  @active
+  Scenario: Clicking logo after login
     Given I have authenticated from the home page
     And I am on the user home page
     When I click 'FutureNotes'
-    Then I should be redirected to the home page
+    Then I should be redirected to the user home page
   
   @active
   Scenario: Click login
@@ -18,7 +24,7 @@ Feature: Header
     When I click 'Add Note'
     Then I should be redirected to the new note page
     
-  @active
+  @deprecated
   Scenario: Click my notes
     Given I have authenticated from the home page
     And I am on the home page

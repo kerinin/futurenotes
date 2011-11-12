@@ -16,6 +16,16 @@ $lighter_grey: #aaa;
 @import 'reset';
 @import 'scaffolds';
 
+
+body {
+margin: 0;
+padding: 0;
+}
+#content {
+  clear: both;
+}
+
+
 @import 'footer';
 @import 'header';
 @import 'notes';

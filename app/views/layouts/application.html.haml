@@ -11,29 +11,33 @@
     %body
 
       #header
-        #logo=link_to 'FutureNotes', '/'
-      
-        -unless current_user.nil?
-          #my_notes
-            =link_to 'My Notes', user_path(current_user)
-        #about
-          =link_to 'About', '/about'
-        
-        -if current_user.nil?
-          #login
-            =link_to 'Login', new_user_session_path
-        -else
-          #logout
-            =link_to 'Logout', destroy_user_session_path
-          
-        #header_search
-          =form_tag '/search', :method => 'get' do
-            =label_tag :q, 'Search for:'
-            =text_field_tag :q
-            =submit_tag 'Search'
-          
-        #add_note
-          %button{:type => :button}=link_to 'Add Note', new_note_path
+        .left
+          -if current_user.nil?
+            #logo=link_to 'FutureNotes', '/'
+          -else
+            #logo
+              =link_to 'FutureNotes', user_path(current_user)
+
+          #header_search
+            =form_tag '/search', :method => 'get' do
+              =label_tag :q, 'Search for:'
+              =text_field_tag :q, {}, {:type => :search, :results => 10}
+              =submit_tag 'Search'
+            
+        .right                   
+          -if current_user.nil?
+            #user_options
+              =link_to 'Login', new_user_session_path
+          -else
+            #user_options
+              #user_name
+                =link_to current_user.email, current_user
+              
+              #user_actions
+                =link_to raw('&rarr; Logout'), destroy_user_session_path
+                    
+          #add_note
+            %button{:type => :button}=link_to 'Add Note', new_note_path
         
         %p.notice= notice
         %p.alert= alert

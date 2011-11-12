@@ -3,12 +3,18 @@
   $text_highlight: #9da0ab;
   
   width: 100%;
-  height : 32px;
+  height: 50px;
+  line-height: 50px;
+  margin-bottom: 30px;
+  position: relative;
+  
   background: black;
   color : $text;
   background: none;
+  
   // text-shadow: 1px 1px 1px $text_highlight;
   // -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, .65);
+  // line-height : 36px;
   
   div { display : inline; }
   form { display : inline; }
@@ -22,7 +28,15 @@
     }
   }
   
-  line-height : 36px;
+  .left { float: left; }
+  .right { float: right; text-align: right; }
+  .left, .right { 
+    clear: none; 
+    width: auto;
+    height: 50px;
+    line-height: 50px;
+  }
+  
   #logo {
     margin-left: 10px;
     font-size : 36px;
@@ -30,11 +44,49 @@
     a {color: white;}
   }
   
-  #header_search { display: none; }
+  #header_search {
+    label { display: none; }
+    input[type=submit] { display: none; }
+    input[type=search] { 
+      line-height: 36px; 
+      vertical-align: text-bottom;
+      width: 200px;
+      margin-left: 10px;
+    }
+  }
   
-  #add_note {
-    float : right;
+  #user_options {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0px 10px;
+    margin: 4px 10px;
+    text-align: left;
     
+    #user_actions { 
+      display: none; 
+    }
+    &:hover {
+      background: white;
+      border: 1px solid $blue;
+      border-radius: 4px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, .65);
+      
+      & #user_name {
+        font-weight: bold;
+        padding-bottom: 10px;
+        border-bottom: 1px solid $lighter_grey;
+      }
+      & #user_actions {
+        font-size: 10px;
+        line-height: 20px;
+        display: block;
+        padding-bottom: 10px;
+      }
+    }
+  }
+  
+  #add_note {    
     button {
       margin-right: 20px;
       margin-top: 10px;
