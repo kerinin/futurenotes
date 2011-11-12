@@ -15,7 +15,7 @@ Feature: Create new notes
     And I should see the text 'Public' under '#scope'
     And I should see '#scope input[type=radio]'
 
-  @current
+  @active
   Scenario: Basic Input
     Given I have authenticated from the home page
     And I am on the new note page

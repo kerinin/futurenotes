@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
+  load_and_authorize_resource
+  
   def show
-    @user = User.find(params[:id])
+    # @user = User.find(params[:id]) CanCan
     @tags = @user.tags
     @new_note = Note.new
     

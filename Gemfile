@@ -28,6 +28,7 @@ end
 
 gem 'jquery-rails'
 gem 'devise'
+gem 'cancan'
 
 group :test do
   gem 'capybara'

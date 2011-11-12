@@ -1,0 +1,17 @@
+#title_bar
+  %h2 Forgot your password?
+
+.auth_fields.section
+  = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
+    = devise_error_messages!
+
+    %div
+      = f.label :email
+      %br
+      = f.email_field :email
+
+    %div
+      = f.submit "Reset Password"
+
+  #login_links
+    = render :partial => "devise/shared/links"

@@ -21,10 +21,17 @@ body {
 margin: 0;
 padding: 0;
 }
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+hr {
+  border: none;
+  border-bottom: 1px solid $lighter_grey;
+}
 #content {
   clear: both;
 }
-
 
 @import 'footer';
 @import 'header';

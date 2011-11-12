@@ -75,3 +75,10 @@ Feature: User home page
     And I should not see the text 'Note 2'
     And I should see the text 'Note 3'
     And I should see the text 'Note 4'
+    
+  @active
+  Scenario: Try to view someone else's home page
+    Given a test user with password 'easy_password'
+    And I have authenticated from the home page
+    When I am on the test user home page
+    Then I should be redirected to the user home page

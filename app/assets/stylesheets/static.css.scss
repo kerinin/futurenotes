@@ -28,3 +28,14 @@
     }
   }
 }
+
+#about {
+  .big {
+    button {
+      font-size: 32px;
+      line-height: 36px;
+      font-family: 'Rokkitt';
+      &, a { color: white; }
+    }
+  }
+}

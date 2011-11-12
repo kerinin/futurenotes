@@ -1,0 +1,25 @@
+#title_bar
+  %h1 Welcome to FutureNotes
+  
+#about.section
+  %p.big
+    Do you ever wish you'd taken notes on something before
+    you forgot all the details?
+
+  %p.medium
+    FutureNotes is a simple place for you to jot down tidbits you might 
+    want help remembering in the future:
+
+    %ul
+      %li Reading notes
+      %li Troubleshooting shortcuts
+      %li The best way to accomplish a task
+
+  %p.medium
+    Not only will FutureNotes keep your notes for future reference,
+    you can also browse other people's shared notes on the same topic.  
+
+  %p.big
+    FutureNotes is free to join 
+    %button{:type => :button}=link_to 'Get Started!', new_user_registration_path
+    

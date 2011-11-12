@@ -11,7 +11,7 @@ Feature: Search by Tag
     And I should see the text 'Note 4'
     And I should not see the text 'Private Note 4'
         
-  @active
+  @pending
   Scenario: Click tag from the home page
     Given I am on the home page
     When I click 'Tag 1'

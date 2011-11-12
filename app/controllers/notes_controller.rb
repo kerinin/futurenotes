@@ -1,8 +1,11 @@
 class NotesController < ApplicationController
+  load_and_authorize_resource
+  before_filter :authenticate_user!, :except => [:index, :show]
+  
   # GET /notes
   # GET /notes.json
   def index
-    @notes = Note.all
+    # @notes = Note.all  Cancan
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +16,7 @@ class NotesController < ApplicationController
   # GET /notes/1
   # GET /notes/1.json
   def show
-    @note = Note.find(params[:id])
+    #@note = Note.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -24,8 +27,8 @@ class NotesController < ApplicationController
   # GET /notes/new
   # GET /notes/new.json
   def new
-    @note = Note.new
-    @tags = Tag.limit(20)
+    #@note = Note.new
+    @tags = current_user.tags
     
     unless current_user.nil? || current_user.notes.empty?
       @note.tags = current_user.notes.last_created_first.first.tags
@@ -39,16 +42,16 @@ class NotesController < ApplicationController
 
   # GET /notes/1/edit
   def edit
-    @note = Note.find(params[:id])
+    #@note = Note.find(params[:id])
     @tags = current_user.tags
   end
 
   # POST /notes
   # POST /notes.json
   def create
-    @note = Note.new(params[:note])
+    #@note = Note.new(params[:note])
     @note.user ||= current_user
-    @tags = Tag.limit(20)
+    @tags = current_user.tags
     
     unless params[:new_tag].nil?
       # check for comma-delimited tag names
@@ -74,7 +77,7 @@ class NotesController < ApplicationController
   # PUT /notes/1
   # PUT /notes/1.json
   def update
-    @note = Note.find(params[:id])
+    #@note = Note.find(params[:id])
 
     respond_to do |format|
       if @note.update_attributes(params[:note])
@@ -90,11 +93,11 @@ class NotesController < ApplicationController
   # DELETE /notes/1
   # DELETE /notes/1.json
   def destroy
-    @note = Note.find(params[:id])
+    #@note = Note.find(params[:id])
     @note.destroy
 
     respond_to do |format|
-      format.html { redirect_to user_path(current_user) }
+      format.html { redirect_to user_path(current_user), :notice => 'Note was deleted.' }
       format.json { head :ok }
     end
   end

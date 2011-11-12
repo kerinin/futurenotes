@@ -13,3 +13,7 @@ end
 Given /^a test tag named '(.+)'$/ do |name|
   @test_tag = Tag.create!(:name => name)
 end
+
+Given /^a test user with password '(.+)'$/ do |password|
+  @test_user = User.create!(:email => 'test@example.com', :password => password, :password_confirmation => password)
+end

@@ -1,5 +1,5 @@
 Feature: When creating a new note, automatically add the tags from the last note created
-Reduces interface interaction, increases tag usage
+  # Reduces interface interaction, increases tag usage
 
   @deprecated
   Scenario: From user home page check last tags

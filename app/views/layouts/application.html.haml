@@ -18,26 +18,32 @@
             #logo
               =link_to 'FutureNotes', user_path(current_user)
 
-          #header_search
+          #search_bar
             =form_tag '/search', :method => 'get' do
               =label_tag :q, 'Search for:'
-              =text_field_tag :q, {}, {:type => :search, :results => 10}
+              =text_field_tag :q, {}, {:type => :search, :results => 10, :class => :placeholder, :placeholder => 'Search'}
               =submit_tag 'Search'
             
         .right                   
           -if current_user.nil?
             #user_options
               =link_to 'Login', new_user_session_path
+              
+            #add_note
+              %button{:type => :button}=link_to 'Add Note', new_user_session_path
           -else
-            #user_options
+            #user_options.active
               #user_name
                 =link_to current_user.email, current_user
               
               #user_actions
+                =link_to raw('&rarr; Change Password'), edit_user_registration_path
+                %br
                 =link_to raw('&rarr; Logout'), destroy_user_session_path
-                    
-          #add_note
-            %button{:type => :button}=link_to 'Add Note', new_note_path
+                  
+            #add_note
+              %button{:type => :button}=link_to 'Add Note', new_note_path  
+
         
         %p.notice= notice
         %p.alert= alert

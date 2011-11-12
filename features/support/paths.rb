@@ -25,10 +25,15 @@ module NavigationHelpers
     when 'the sign-in page'
       '/users/sign_in'
       
+    when 'the new user page'
+      new_user_registration_path
     when 'the test note edit page'
       edit_note_path(@test_note)
+
     when 'the test tag page'
       tag_path(@test_tag)
+    when 'the test user home page'
+      user_path(@test_user)
       
     when /^tag page (\d+)$/
       tag_path( @tags[$1.to_i-1] )

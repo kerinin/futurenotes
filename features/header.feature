@@ -22,7 +22,7 @@ Feature: Header
   Scenario: Click add
     Given I am on the home page
     When I click 'Add Note'
-    Then I should be redirected to the new note page
+    Then I should be redirected to the sign-in page
     
   @deprecated
   Scenario: Click my notes
