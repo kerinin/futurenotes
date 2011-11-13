@@ -1,19 +1,16 @@
 Priorities
 =======
-3 Logo should link to user home page if logged in, remove 'my notes' link
-4 Markdown
-5 Collapse post size
+1 Cross-browser CSS/JS check, hacks for -moz, -webkit, etc
+2 Markdown
+3 Collapse post size
+
 
 
 Implementation Details
 =======
 
 * Cache where helpful, figure out a way for pushes to reset cache (?)
-* Access control
-* markdown
 * bookmark to add notes
-* clean up user signup flow
-
 
 
 UI Design Details

@@ -4,10 +4,7 @@ body {
   font-family: 'Helvetica Neue', arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px; 
-  background-image: 
-    -webkit-gradient(radial, 50% 300, 200, 50% 400, 600, from(rgba(0,0,0,.4)), to(rgba(0,0,0,.7))), 
-    url('/assets/wood_background.jpg');
-  background-attachment:fixed;
+  background-image: url('/assets/leather.jpg');
   margin: 0;
   
   #content {
@@ -19,7 +16,7 @@ body {
     padding: 40px;
     background: $white;
     color: $grey;
-    -webkit-box-shadow: 5px 5px 15px black;
+    box-shadow: 0 0 15px black;
 
     a {
       color: $blue;

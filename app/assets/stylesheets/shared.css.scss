@@ -20,7 +20,7 @@ button {
   background-color: $blue;
   border: 1px solid $blue;
   border-radius: 6px;
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(lighten($blue, 5%)), to( darken($blue, 15%)));
+  background: linear-gradient( top, lighten($blue,5%), darken($blue, 15%) );
   
   &:hover {
     cursor: pointer;
@@ -36,7 +36,7 @@ input[type=submit] {
   background-color: $grey;
   border: 1px solid $grey;
   border-radius: 6px;
-  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(lighten($grey, 15%)), to( darken($grey, 5%)));
+  background: linear-gradient( top, lighten($grey, 15%), darken($grey, 5%) );
   
   &:hover {
     cursor: pointer;
