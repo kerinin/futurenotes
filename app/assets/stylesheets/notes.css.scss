@@ -4,11 +4,9 @@
 
 $title_size: 34px;
 $title_line_height: 36px;
-$title_font: 'Rokkitt';
 
 $description_size: 18px;
 $description_line_height: 20px;
-$description_font: 'Arvo';
 
 #new_note, #edit_note {
   #title {
@@ -17,7 +15,7 @@ $description_font: 'Arvo';
       height: $title_line_height;
       font-size: $title_size;
       line-height: $title_line_height;
-      font-family: $title_font;
+      font-family: $heading;
       color: $grey;
     }
   }
@@ -28,7 +26,7 @@ $description_font: 'Arvo';
       height: $description_line_height * 10;
       font-size: $description_size;
       line-height: $description_line_height;
-      font-family: $description_font;
+      font-family: $body;
       color: $light_grey;
     }
   }
@@ -60,10 +58,11 @@ $description_font: 'Arvo';
   margin-bottom: 30px;
 
   .title {
-    font-family: $title_font;
+    font-family: $heading;
     font-weight : 400;
   
     h2 {
+      font-weight: normal;
       font-size : $title_size;
       line-height: $title_line_height;  
     }
@@ -72,7 +71,7 @@ $description_font: 'Arvo';
   .description {
     font-size : $description_size;
     line-height: $description_line_height;
-    font-family: $description_font;
+    font-family: $body;
     font-weight : 400;
     text-align: justify;
     color: $light-grey;
@@ -84,7 +83,7 @@ $description_font: 'Arvo';
   }
 
   .tags {
-    font-family: $title_font;
+    font-family: $heading;
     font-size: 20px;
     line-height: 24px;
     margin-top: 5px;
