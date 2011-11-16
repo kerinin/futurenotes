@@ -12,6 +12,8 @@ $red: #f77f72;
 $grey: #555555;
 $light_grey: #777;
 $lighter_grey: #aaa;
+$lightest_grey: #e6e6e6;
+$dark_grey: #555;
 
 $heading: 'Rokkitt', 'Helvetica Neue', helvetica, arial, sans-serif;
 $body: 'Arvo', georgia, serif;
@@ -33,6 +35,9 @@ h2 {
 hr {
   border: none;
   border-bottom: 1px solid $lighter_grey;
+}
+em {
+  font-style: italic;
 }
 #content {
   clear: both;

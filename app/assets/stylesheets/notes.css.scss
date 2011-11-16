@@ -57,29 +57,50 @@ $description_line_height: 20px;
 .note {
   margin-bottom: 30px;
 
-  .title {
+  .title h2 p {
+    margin-bottom: 0;
     font-family: $heading;
     font-weight : 400;
   
-    h2 {
-      font-weight: normal;
-      font-size : $title_size;
-      line-height: $title_line_height;  
-    }
+    font-weight: normal;
+    font-size : $title_size;
+    line-height: $title_line_height;  
   }
 
   .description {
-    font-size : $description_size;
-    line-height: $description_line_height;
-    font-family: $body;
-    font-weight : 400;
-    text-align: justify;
-    color: $light-grey;
-    margin-bottom: 10px;
+    p, ul, ol, h1, h2, h3 {
+      font-size : $description_size;
+      line-height: $description_line_height;
+      font-family: $body;
+      font-weight : 400;
+      text-align: justify;
+      color: $light-grey;
+      margin-bottom: 10px;
+    }
+    ul, ol {
+      margin-left: 1em;
+      li { 
+        margin-left: 1em;
+      }
+    }
+    ul { list-style-type:circle; }
+    ol { list-style-type:decimal; }
+    h1, h2, h3 {
+      font-weight: bold;
+    }
+    blockquote {
+      margin: 0 1em;
+      p {
+        font-style: italic;
+        font-size: 16px;
+      }
+    }
   }
 
-  .code {
-   font-family: 'Inconsolata';
+  .code, code {
+   font-family: $code;
+   background: $lightest_grey;
+   color: $dark_grey;
   }
 
   .tags {

@@ -1,9 +1,9 @@
 .title
-  %h2= note.title
+  %h2= markdown note.title
 
 -unless note.description.nil?
   .description
-    =note.description
+    =markdown( note.description )
     
 -unless note.tags.empty?
   .tags

@@ -33,6 +33,7 @@ GEM
     addressable (2.2.6)
     arel (2.2.1)
     bcrypt-ruby (3.0.1)
+    bluecloth (2.2.0)
     builder (3.0.0)
     cancan (1.6.7)
     capybara (1.1.1)
@@ -163,6 +164,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_indexed (~> 0.7.6)
+  bluecloth
   cancan
   capybara
   coffee-rails (~> 3.1.1)
